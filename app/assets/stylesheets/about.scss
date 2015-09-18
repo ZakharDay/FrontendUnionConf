@@ -1,0 +1,54 @@
+#aboutSection,
+#locationSection {
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include square;
+  @include minWidth;
+  @include minHeight;
+  padding: 50px 50px 50px 160px;
+  background-color: blue;
+  color: white;
+
+  pre {
+    @include ptMonoBold;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+#locationSection {
+  background-color: $menuGrey;
+}
+
+// #scheduleSection {
+//   background-color: $white;
+//   color: $black;
+//   height: auto;
+//   @include display-flex;
+//   @include flex-direction(row);
+//   @include justify-content(space-around);
+//
+//   pre {
+//     width: 50%;
+//   }
+//
+// }
+
+@media only screen and (max-width : 1366px) {
+  #aboutSection,
+  #locationSection {
+    @include minHeightSmallScreen;
+    padding: 30px 30px 30px 70px;
+
+    pre {
+      font-size: 22px;
+      line-height: 33px;
+    }
+  }
+}

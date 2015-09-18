@@ -1,0 +1,83 @@
+#scheduleSection {
+  padding: 100px;
+
+  section {
+    @include display-flex;
+    @include justify-content(space-between);
+
+    article {
+      @include ptMonoBold;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 48px;
+
+      div {
+        width: 540px;
+        padding-left: 40px;
+
+        .blue { color: blue; }
+        .grey { color: #666666; }
+      }
+    }
+  }
+
+  footer {
+    padding-top: 100px;
+
+    h3 {
+      @include ptMonoBold;
+      font-size: 20px;
+      color: #666666;
+      text-align: center;
+
+      a {
+        color: #666666;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 1366px) {
+
+  #scheduleSection {
+    section {
+      width: 1050px;
+      margin: 0 auto;
+
+      article {
+        font-size: 22px;
+        line-height: 33px;
+
+        div {
+          width: 440px;
+          padding-left: 30px;
+        }
+      }
+    }
+
+    footer {
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 1240px) {
+  #scheduleSection {
+    section {
+      width: auto;
+      margin: 0 auto;
+
+      article {
+        div {
+          width: 300px;
+        }
+      }
+    }
+  }
+}

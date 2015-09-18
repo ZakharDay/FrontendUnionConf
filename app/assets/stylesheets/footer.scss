@@ -1,0 +1,23 @@
+#footer {
+  @include display-flex();
+  @include justify-content(space-between);
+
+  width: 100vw;
+  padding: 22px 30px;
+  @include minWidth;
+  height: 60px;
+  background-color: $menuGrey;
+
+  @include ptSansBold;
+  font-size: 15px;
+  color: white;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
