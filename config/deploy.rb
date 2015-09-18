@@ -6,7 +6,10 @@ set :rbenv_ruby, '2.2.2'
 
 set :application, 'union_conf'
 set :repo_url, 'git@github.com:ZakharDay/FrontendUnionConf.git'
-set :branch, 'landing'
+set :branch, 'master'
+
+set :puma_init_active_record, true
+set :puma_conf, -> { File.join(shared_path, 'config', 'puma.rb') }
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -27,7 +30,7 @@ set :deploy_to, "/home/deployer/apps/#{fetch :application}"
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/puma.rb')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
